@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <title>react</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const root = document.getElementById('root')
+    class App extends React.Component{
+      //constructor는 App이 실행될때 자동으로 실행되는 함수
+      constructor(props){
+        //super는 constructor를 생성할때 같이 넣어주어야 하는 인자값
+        super(props)
+      }
+      render(){
+        return (
+          <div>
+            <div>{this.props.name} 안녕하세요!</div>  
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<App name = "gwangmin"/>, root)
+  </script>
+</body>
+
+</html>
