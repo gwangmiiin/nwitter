@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 export default class Say2 extends Component {
     state = {
       message : '초기값',
-      color : {color : 'blue'}
+      colorcolor : {color : 'blue'}
     }
     handleColor = () => {
       this.setState({
-        color :{color : 'red'}
+        colorcolor :{color : 'red'}
       })
     }
     onClickEnter = () => {
@@ -23,7 +23,7 @@ export default class Say2 extends Component {
     render(){
     return (
       <div>
-        <h1 style={this.state.color}>{this.state.message}</h1>
+        <h1 style={this.state.colorcolor}>{this.state.message}</h1>
         <button onClick={this.onClickEnter}>입장</button>
         <button onClick={this.onClickLeave}>퇴장</button>
         <button onClick={this.handleColor}>글자색 변경</button>
