@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 // import Blog from './components/Blog';
 // import Box from './components/Box'
@@ -7,12 +8,83 @@ import './App.css';
 // import Say2 from './components/Say2';
 // import SimpleForm from './components/SimpleForm';
 // import Gugudan from './components/Gugudan';
-import JavascriptGrammer from './components/JavascriptGrammer'
+// import JavascriptGrammer from './components/JavascriptGrammer'
 
 function App() {
+  let names = [
+    "Steven paul jobs",
+    "Bill gates",
+    "Mark Eliiot Zuckerberg",
+    "Elon Musk",
+    "Jeff Bezos",
+    "Warren Edward Buffett",
+    "Larry page",
+    "Tim Cook",
+    "Lloyed Blankfein"
+  ]
+  let ceoList = [
+    {name : "Larry page", age : 23, ceo : true},
+    {name : "Tim Cook", age : 40, ceo : true},
+    {name : "Elon Musk", age : 55, ceo : false}
+  ]
+  // function printName(item) {
+  //   console.log(item)
+  // }
+  // names.forEach(printName)
+  //forEach는 반환값이 없다. 단순 for문과 같이 작동함. 
+  // let data = names.map((item) => {
+    //map은 반드시 배열을 반환한다. 배열의 안에 있는 값이 하나가 아니라 객체로 구성되어 있을때 특정의 값만 가져오고 싶을때 사용
+  //   return item
+  // })
+  // console.log(data)
+
+  let data = names.map((item) => {
+    return item.toUpperCase().split(' ', 1)
+    // API같은 자료의 값은 대부분 객체 형체로 되어 있는데 이를 뺴내고 싶을때 사용 
+  })
+  console.log('map', data)
+
+  let data2 = names.filter((item) => {
+    return item.length >= 20
+})
+console.log('filter', data2);
+
+  let data3 = names.some((item) => {
+    return item.length >= 20
+    // 조건이 맞으면 true 틀리면 false
+  })
+  console.log('some ->', data3)  
+
+  let data4 = names.every((item) => {
+    return item.length >= 20
+    //모든 조건이 맞을 경우 true 아니면 false
+  })
+  console.log('every ->', data4)  
+
+  let data5 = names.find((item) => {
+    return item.length >= 20
+    //find는 조건에 맞는것을 하나만 찾아줌, fillter는 배열로 나옴.
+  })
+  console.log('find ->', data5) 
+  
+  let data6 = names.findIndex((item) => {
+    return item.length >= 20
+    //find는 조건에 맞는것을 하나만 찾아줌, fillter는 배열로 나옴.
+  })
+  console.log('findIndex ->', data6) 
+
+  // 배열함수 정리 
+  // -forEach : 빈환값이 없다, 단순 for문과 같이 작동
+  // -map : 반환값을 배열에 담아 반환.
+  // -filer : 조건에 충족한 (true) 아이템만 배열에 담에 반환함
+  // -some : 조건에 충족하는 아이템이 하나라도 있으면 true 반환, 아니면 false
+  // -every : 모든 배열에 아이템이 조건을 충족하면 t, 아니면 f
+  // -find : 조건에 충족하는 아이템 하나만 반환(여러개면 첫번째만 반환)
+  // -findIndex : 조건에 충족하는 아이템의 인덱스값 반환(여러개면 첫번째아이템의 인덱스번호만 반환)
+
   return (
     <div className="App">
-      <JavascriptGrammer />
+     {/* { <JavascriptGrammer />} */}
     </div>
   );
 }
