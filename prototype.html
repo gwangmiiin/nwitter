@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+    <script>
+      function robot() {
+        this.q = "run";
+        this.w = "walk";
+      }
+      robot.prototype.name = "kim";
+      var haha = new robot();
+      console.log(haha.name);
+
+      /* Object에서 자료를 요청할 때 일어나는 일
+      1. 직접자료를 가지고 있으면 바로 출력
+      2. 없으면 부모 유전자까지 찾는다. 
+      3. 없으면 부모의 부모 유전자까지 찾는다.
+      4. 그래도 없으면 계속 찾는다. 
+      이런것을 prototypr chain 이라고 함 */
+      //prototype chain
+      function Ultra() {
+        Ultra.prototype.ultraProp = true;
+        function Super() {}
+        Super.prototype = new Ultra();
+        function Sub() {}
+        Sub.prototype = new Super();
+        var o = new Sub();
+        console.log(o.ultraProp);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
